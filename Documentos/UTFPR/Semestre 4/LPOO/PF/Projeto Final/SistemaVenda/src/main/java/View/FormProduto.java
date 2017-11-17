@@ -456,9 +456,9 @@ public class FormProduto extends javax.swing.JInternalFrame {
         } catch(IllegalArgumentException erro1){
             JOptionPane.showMessageDialog(this , "Selecione um produto para exclui-lo");
         }catch(PersistenceException erro2){
-            JOptionPane.showMessageDialog(this , "Selecione um produto para exclui-lo");
+            JOptionPane.showMessageDialog(this , "Este produto esta contido em outras vendas");
         }catch(Exception erro3){
-            JOptionPane.showMessageDialog(this , "Este produto esta persistido em outras vendas \n"
+            JOptionPane.showMessageDialog(this , "Este produto esta contido em outras vendas \n"
                     + "por isto é impossível exclui-lo");
             System.err.println(erro3);
         }  
@@ -480,7 +480,7 @@ public class FormProduto extends javax.swing.JInternalFrame {
 
     private void jTprodutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTprodutosMouseClicked
         this.produto = this.produtoController.getProdutos().get(this.jTprodutos.getSelectedRow());
-        this.produtoController.setProduto(produto);
+        this.produtoController.setProduto(this.produto);
         preencherCampos();
     }//GEN-LAST:event_jTprodutosMouseClicked
 

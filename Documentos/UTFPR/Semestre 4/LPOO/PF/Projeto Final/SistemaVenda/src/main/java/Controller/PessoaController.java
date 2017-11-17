@@ -49,6 +49,7 @@ public final class PessoaController {
             JOptionPane.showMessageDialog(null , "Registro excluido com sucesso");
         }catch(Exception erro){
             JOptionPane.showMessageDialog(null , "Erro ao excluir registro");
+            JOptionPane.showMessageDialog(null, "Este registro esta contido em alguma venda\n");
         }
     }
     
